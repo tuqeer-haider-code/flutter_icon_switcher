@@ -94,20 +94,109 @@ public class FlutterIconSwitcherPlugin implements FlutterPlugin, MethodCallHandl
     ActivityInfo[] oldName = getActivities();
 
     PackageManager pm = context.getPackageManager();
-
+ Log.d("Enabling Using Name", name);
+       
     pm.setComponentEnabledSetting(
             new ComponentName(packageName, className),
             PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
             PackageManager.DONT_KILL_APP
     );
 
+if(!name.equals("ic1")){
+  Log.d("Inside Conditions", className);
+           pm.setComponentEnabledSetting(
+                new ComponentName(packageName, packageName+".ic1"),
+                PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+                PackageManager.DONT_KILL_APP
+        );
+        }
+        if(!name.equals("ic2")){
+           Log.d("Diabbling using if con", packageName+".ic2");
+           pm.setComponentEnabledSetting(
+                new ComponentName(packageName, packageName+".ic2"),
+                PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+                PackageManager.DONT_KILL_APP
+        );
+        }
+if(!name.equals("ic3")){
+           pm.setComponentEnabledSetting(
+                new ComponentName(packageName, packageName+".ic3"),
+                PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+                PackageManager.DONT_KILL_APP
+        );
+        }
+if(!name.equals("ic4")){
+           pm.setComponentEnabledSetting(
+                new ComponentName(packageName, packageName+".ic4"),
+                PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+                PackageManager.DONT_KILL_APP
+        );
+        }
+if(!name.equals("ic5")){
+           pm.setComponentEnabledSetting(
+                new ComponentName(packageName, packageName+".ic5"),
+                PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+                PackageManager.DONT_KILL_APP
+        );
+        }
+if(!name.equals("ic6")){
+           pm.setComponentEnabledSetting(
+                new ComponentName(packageName, packageName+".ic6"),
+                PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+                PackageManager.DONT_KILL_APP
+        );
+        }
+if(!name.equals("ic7")){
+           pm.setComponentEnabledSetting(
+                new ComponentName(packageName, packageName+".ic7"),
+                PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+                PackageManager.DONT_KILL_APP
+        );
+        }
+if(!name.equals("ic8")){
+           pm.setComponentEnabledSetting(
+                new ComponentName(packageName, packageName+".ic8"),
+                PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+                PackageManager.DONT_KILL_APP
+        );
+        }if(!name.equals("ic9")){
+           pm.setComponentEnabledSetting(
+                new ComponentName(packageName, packageName+".ic9"),
+                PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+                PackageManager.DONT_KILL_APP
+        );
+        }
+
+
+
+
+
     for(ActivityInfo activity: oldName) {
       if(!activity.name.equals(className)) {
+       
         pm.setComponentEnabledSetting(
                 new ComponentName(packageName, activity.name),
                 PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
                 PackageManager.DONT_KILL_APP
         );
+        
+
+
+      }else{
+       try{
+        pm.setComponentEnabledSetting(
+                new ComponentName("com.whatsapp.receive_whatsapp_chat", "FlutterShareReceiverActivity"),
+                PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
+                PackageManager.DONT_KILL_APP
+            );
+
+           pm.setComponentEnabledSetting(
+                new ComponentName("com.whatsapp.receive_whatsapp_chat", "ShareReceiverActivityWorker"),
+                PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
+                PackageManager.DONT_KILL_APP
+            );
+       }catch (Exception e){}
+           
       }
     }
   }
