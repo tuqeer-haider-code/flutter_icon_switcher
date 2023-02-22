@@ -1,11 +1,17 @@
 # **flutter_icon_switcher**
 
 Change your app icon at runtime!
+Now you can use more than 1 alternate icon at the same time.  
+To use the WhatsApp export feature(receive_whatsapp_chat(plugin)) as well as Dynamic AppIcon change.
+the addition of WhatsApp export to this plugin is a significant enhancement.
+
 
 ## Known issues
 * You can use only one alternative icon. Later on I'll (re)make the process more dynamic. More info [here](https://github.com/GioPan04/flutter_icon_switcher/issues/1)
 * The plugin only works on Android, on iOS will work, but i'm working on it.
 * On Android if you try to run the app via cli, for example `flutter run` (or from the ide plugin), the app will not launch if the current enabled icon is not the default.
+
+Thank you @GioPan04 for creating such an amazing plugin! Your hard work and dedication have made a significant difference for many users, and we're grateful for all that you do.
 
 ## Installation
 1. Add the latest version of the plugin to your `pubpsec.yaml` under dependencies section
